@@ -1,8 +1,10 @@
 import { IoLocationOutline } from "react-icons/io5";
 import { AiOutlineDollarCircle } from "react-icons/ai";
-
+import PropTypes from 'prop-types'
+import { Link } from "react-router-dom";
 const Job = ({ job }) => {
   const {
+    id,
     logo,
     job_title,
     company_name,
@@ -11,6 +13,8 @@ const Job = ({ job }) => {
     job_type,
     salary,
   } = job;
+
+
   return (
     <div className="border border-gray-400 p-10 rounded-2xl space-y-3">
       <img src={logo} alt="" />
@@ -31,9 +35,16 @@ const Job = ({ job }) => {
           {salary}
         </p>
       </div>
-      <button className="btn-primary btn">View Details</button>
+      <Link to={`/job/${id}`}>
+        <button className="btn-primary btn">View Details</button>
+      </Link>
+        
     </div>
   );
 };
+
+Job.propTypes ={ 
+    job: PropTypes.array
+}
 
 export default Job;

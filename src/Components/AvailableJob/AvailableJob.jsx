@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types'
 
 const AvailableJob = ({job}) => {
     const {logo, category_name, availability} = job;
@@ -10,5 +10,9 @@ const AvailableJob = ({job}) => {
         </div>
     );
 };
+
+AvailableJob.propTypes ={
+    job: PropTypes.object
+}
 
 export default AvailableJob;

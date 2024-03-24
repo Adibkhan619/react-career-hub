@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { IoLocationOutline } from "react-icons/io5";
 import { AiOutlineDollarCircle } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const AppliedJob = ({job}) => {
 
@@ -39,7 +40,10 @@ const AppliedJob = ({job}) => {
       </div>
            </div> 
             </div>           
-           <button className="btn-primary btn">View Details</button>
+           {/* <button className="btn-primary btn">View Details</button> */}
+           <Link to={`/job/${id}`}>
+        <button className="btn-primary btn">View Details</button>
+      </Link>
         </div>
         
         
